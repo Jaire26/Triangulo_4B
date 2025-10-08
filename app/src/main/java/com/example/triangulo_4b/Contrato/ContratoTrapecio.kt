@@ -5,11 +5,11 @@ interface ContratoTrapecio {
 
     interface Modelo{
 
-        fun areaTrap(baseMayor: Float, baseMenor: Float, altura: Float, lado1: Float, lado2: Float): Float;
-        fun perimtroTrao(baseMayor: Float, baseMenor: Float, lado1: Float, lado2: Float):Float
+        fun areaTrap(baseMayor: Float, baseMenor: Float, altura: Float): Float;
+        fun perimtroTraP(baseMayor: Float, baseMenor: Float, lado1: Float, lado2: Float):Float
         fun tipoTrap(lado1: Float, lado2: Float,altura:Float): String
 
-        fun validaTrap(baseMayor: Float, baseMenor: Float, altura: Float, lado1: Float, lado2: Float): Boolean
+        fun validaTrap(baseMayor: Float, baseMenor: Float, altura: Float): Boolean
 
     }
 
@@ -26,7 +26,7 @@ interface ContratoTrapecio {
 
     interface Presentador {
 
-        fun areaTrap(baseMayor: Float, baseMenor: Float, altura: Float, lado1: Float, lado2: Float)
+        fun areaTrap(baseMayor: Float, baseMenor: Float, altura: Float)
 
         fun perimetroTrap(baseMayor: Float, baseMenor: Float, lado1: Float, lado2: Float, altura: Float)
 

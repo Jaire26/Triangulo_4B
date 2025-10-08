@@ -15,7 +15,7 @@ import com.example.triangulo_4b.R
 class RectanguloActivity : AppCompatActivity(), ContratoRectangulo.Vista {
 
     //declaramos a txtrespara poder usarlo
-    private lateinit var txvRes: TextView
+    private lateinit var txvResRec: TextView
     //declaramos el presentador que vamos a ocupar en la vista
     private lateinit var presentador: ContratoRectangulo.Presentador
 
@@ -31,13 +31,13 @@ class RectanguloActivity : AppCompatActivity(), ContratoRectangulo.Vista {
         val btnArea=findViewById<Button>(R.id.btnArea)
         val btnPerimetro=findViewById<Button>(R.id.btnPerimetro)
         val btnTipo=findViewById<Button>(R.id.btnTipo)
-        val txvResRec=findViewById<TextView>(R.id.txvResRec)
+        txvResRec=findViewById<TextView>(R.id.txvResRec)
 
         //inicializamos al presentador
         presentador= RectanguloPresentador(this)
 
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.mainRectangulo)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -62,20 +62,20 @@ class RectanguloActivity : AppCompatActivity(), ContratoRectangulo.Vista {
         }
     }
     override fun showAreaRec(area: Float) {
-        txvRes.text="El area es : ${area}"
+        txvResRec.text="El area es : ${area}"
     }
 
     override fun showPerimetroRec(perimetro: Float) {
-        txvRes.text="El perimetro es : ${perimetro}"
+        txvResRec.text="El perimetro es : ${perimetro}"
     }
 
     override fun showTipoRec(tipo: String) {
-        txvRes.text = "El tipo de figura es : ${tipo}"
+        txvResRec.text = "El tipo de figura es : ${tipo}"
     }
 
 
     override fun showErrorRec(msg: String) {
 
-      txvRes.text=msg
+      txvResRec.text=msg
     }
 }

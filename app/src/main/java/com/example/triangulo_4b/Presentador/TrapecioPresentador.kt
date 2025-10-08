@@ -11,11 +11,11 @@ class TrapecioPresentador(private val vista: ContratoTrapecio.Vista): ContratoTr
 
     private val modelo: ContratoTrapecio.Modelo= TrapecioModelo()
 
-    override fun areaTrap(baseMayor: Float, baseMenor: Float, altura: Float, lado1: Float, lado2: Float) {
+    override fun areaTrap(baseMayor: Float, baseMenor: Float, altura: Float) {
 
-        if (modelo.validaTrap(baseMayor, baseMenor, altura, lado1, lado2)) {
-            val t = modelo.tipoTrap(altura, lado1, lado2)
-            vista.showTipoTrap(t)
+        if (modelo.validaTrap(baseMayor, baseMenor, altura)) {
+            val t = modelo.areaTrap(baseMayor, baseMenor, altura)
+            vista.showAreaTrap(t)
 
         } else {
             vista.showErrorTrap("Datos no validos para el tipo de trapecio")
@@ -24,9 +24,9 @@ class TrapecioPresentador(private val vista: ContratoTrapecio.Vista): ContratoTr
     }
 
     override fun perimetroTrap(baseMayor: Float, baseMenor: Float, lado1: Float, lado2: Float, altura: Float) {
-        if(modelo.validaTrap(baseMayor, baseMenor, altura, lado1, lado2)){
+        if(modelo.validaTrap(baseMayor, baseMenor, altura)){
 
-            val p = modelo.perimtroTrao(baseMayor, baseMenor, lado1, lado2)
+            val p = modelo.perimtroTraP(baseMayor, baseMenor, lado1, lado2)
             vista.showPerimetroTrap(p)
 
         } else {
@@ -36,9 +36,9 @@ class TrapecioPresentador(private val vista: ContratoTrapecio.Vista): ContratoTr
     }
 
     override fun tipoTrap(baseMayor: Float, baseMenor: Float, altura: Float, lado1: Float, lado2: Float) {
-        if (modelo.validaTrap(baseMayor, baseMenor, altura, lado1, lado2)) {
+        if (modelo.validaTrap(baseMayor, baseMenor, altura)) {
 
-            val t = modelo.tipoTrap(altura, lado1, lado2)
+            val t = modelo.tipoTrap(lado1,lado2,altura)
             vista.showTipoTrap(t)
 
         } else {

@@ -38,12 +38,12 @@ class MaintrapecioActivity : AppCompatActivity(), ContratoTrapecio.Vista {
         val btnArea=findViewById<Button>(R.id.btnAreaTrap)
         val btnPerimetro=findViewById<Button>(R.id.btnPerimetroTrap)
         val btnTipo=findViewById<Button>(R.id.btnTipoTrap)
-        val txvResTrap=findViewById<TextView>(R.id.txvResTr)
+        txvResTrap=findViewById<TextView>(R.id.txvResTr)
 
         //inicializamos al presentador
         presentador= TrapecioPresentador(this)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.mainTrapecio)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -54,7 +54,8 @@ class MaintrapecioActivity : AppCompatActivity(), ContratoTrapecio.Vista {
             val baseMen=txtbaseMenor.text.toString().toFloat()
             val l1=txtl1trap.text.toString().toFloat()
             val l2=txtl2Trap.text.toString().toFloat()
-            presentador.perimetroTrap(baseMay,baseMen,l1,l2)
+            val altura = txtaltura.text.toString().toFloat()
+            presentador.perimetroTrap(baseMay,baseMen,l1,l2, altura)
         }
 
         btnArea.setOnClickListener {
@@ -65,28 +66,31 @@ class MaintrapecioActivity : AppCompatActivity(), ContratoTrapecio.Vista {
         }
 
         btnTipo.setOnClickListener {
-            val l1=txtbaseMenor.text.toString().toFloat()
-            val l2=txtbaseMenor.text.toString().toFloat()
-            val altura=txtaltura.text.toString().toFloat()
-            presentador.tipoTrap(l1,altura,lado1)
+            val lado1 = txtl1trap.text.toString().toFloat()
+            val lado2 = txtl2Trap.text.toString().toFloat()
+            val altura = txtaltura.text.toString().toFloat()
+            presentador.tipoTrap(txtbaseMayor.text.toString().toFloat(), txtbaseMenor.text.toString().toFloat(), altura, lado1, lado2)
         }
 
     }
 
     override fun showAreaTrap(area: Float) {
-        txvResTr.text="El area es : ${area}"
+        txvResTrap.text="El area es : ${area}"
 
     }
 
     override fun showPerimetroTrap(perimetro: Float) {
+        txvResTrap.text="El perimetro  es : ${perimetro}"
 
     }
 
     override fun showTipoTrap(tipo: String) {
+        txvResTrap.text="El tipo de trapecio es : ${tipo}"
 
     }
 
     override fun showErrorTrap(msg: String) {
+        txvResTrap.text=msg;
 
     }
 }

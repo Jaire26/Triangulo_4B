@@ -22,7 +22,7 @@ class CirculoPresentador(private val vista: ContratoCirculo.Vista): ContratoCirc
 
         if(modelo.validaCir(radio)){
             val p=modelo.Circunferencia(radio)
-            vista.showCicunferencia(p)
+            vista.showCircunferencia(p)
         }else{
             vista.showErrorCir("Datos no validos")
         }

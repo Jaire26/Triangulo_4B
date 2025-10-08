@@ -2,33 +2,44 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
-        android:label="@string/app_name"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher_round"
+        android:label="Triangulo_4B"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Triangulo_4B">
 
         <activity
-            android:name="com.example.triangulo_4b.Vistas_4B_TrapecioActivity"
+            android:name=".Vista.MainfigurasActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name="com.example.triangulo_4b.Vistas.MaincirculoActivity"
-            android:exported="false" />
+            android:name=".Vista.MainActivity"
+            android:exported="false">
 
+        </activity>
         <activity
-            android:name=".Vistas.MainActivity"
-            android:exported="false" />
+            android:name=".Vista.RectanguloActivity"
+            android:exported="false">
 
+        </activity>
         <activity
-            android:name=".Vistas.RectanguloActivity"
-            android:exported="false" />
+            android:name=".Vista.MaincirculoActivity"
+            android:exported="false">
 
+        </activity>
+        <activity
+            android:name=".Vista.MaintrapecioActivity"
+            android:exported="false">
 
+        </activity>
     </application>
+
 </manifest>

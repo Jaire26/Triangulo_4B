@@ -4,17 +4,11 @@ import com.example.triangulo_4b.Contrato.ContratoTrapecio
 
 class TrapecioModelo: ContratoTrapecio.Modelo {
 
-    override fun areaTrap(
-        baseMayor: Float,
-        baseMenor: Float,
-        altura: Float,
-        lado1: Float,
-        lado2: Float
-    ): Float {
+    override fun areaTrap(baseMayor: Float, baseMenor: Float, altura: Float): Float {
         return ((baseMayor + baseMenor) / 2f) * altura
     }
 
-    override fun perimtroTrao(baseMayor: Float, baseMenor: Float, lado1: Float, lado2: Float): Float {
+    override fun perimtroTraP(baseMayor: Float, baseMenor: Float, lado1: Float, lado2: Float): Float {
 
         return baseMayor + baseMenor + lado1 + lado2
     }
@@ -28,11 +22,12 @@ class TrapecioModelo: ContratoTrapecio.Modelo {
             return "Trapecio Escaleno"
     }
 
-    override fun validaTrap(baseMayor: Float, baseMenor: Float, altura: Float, lado1: Float, lado2: Float): Boolean {
-        if (baseMayor <= 0f || baseMenor <= 0f || altura <= 0f || lado1 <= 0f || lado2 <= 0f) {
+    override fun validaTrap(baseMayor: Float, baseMenor: Float, altura: Float): Boolean {
+        if (baseMayor <= 0f || baseMenor <= 0f || altura <= 0f) {
             return false
         }
-        if (baseMayor == baseMenor) {
+        if (baseMayor == baseMenor)
+        {
             return false
         }
         return true

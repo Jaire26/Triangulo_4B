@@ -33,12 +33,12 @@ class MainActivity : AppCompatActivity(), ContratoTriangulo.Vista {
         val btnArea=findViewById<Button>(R.id.btnArea)
         val btnPerimetro=findViewById<Button>(R.id.btnPerimetro)
         val btnTipo=findViewById<Button>(R.id.btnTipo)
-        val txvRes=findViewById<TextView>(R.id.txvRes)
+        txvRes=findViewById<TextView>(R.id.txvRes)
 
         //inicializamos al presentador
         presentador= TrianguloPresentador(this)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.mainTriangulo)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets

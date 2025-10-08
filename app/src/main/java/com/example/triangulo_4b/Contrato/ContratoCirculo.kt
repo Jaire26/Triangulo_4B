@@ -12,7 +12,7 @@ interface ContratoCirculo {
     interface Vista{
 
         fun showAreaCir(area: Float)
-        fun showCicunferencia(perimetro: Float)
+        fun showCircunferencia(perimetro: Float)
         fun showErrorCir(msg: String)
     }
 

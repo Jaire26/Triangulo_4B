@@ -30,11 +30,11 @@ class MaincirculoActivity : AppCompatActivity(), ContratoCirculo.Vista {
         val txtradio = findViewById<EditText>(R.id.editradio)
         val btnArea = findViewById<Button>(R.id.btnArea)
         val btnPerimetro = findViewById<Button>(R.id.btnCircunferencia)
-        val txvResCir = findViewById<TextView>(R.id.txvResCir)
+        txvResCir = findViewById<TextView>(R.id.txvResCir)
 
         //inicializamos al presentador
         presentador = CirculoPresentador(this)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.mainCirculo)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -56,7 +56,7 @@ class MaincirculoActivity : AppCompatActivity(), ContratoCirculo.Vista {
         txvResCir.text="El area es : ${area}"
     }
 
-    override fun showCicunferencia(perimetro: Float) {
+    override fun showCircunferencia(perimetro: Float) {
         txvResCir.text="La circunferencia total es : ${perimetro}"
     }
 

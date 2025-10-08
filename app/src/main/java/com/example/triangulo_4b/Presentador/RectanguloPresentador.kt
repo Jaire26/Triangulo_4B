@@ -30,7 +30,7 @@ class RectanguloPresentador (private val vista: ContratoRectangulo.Vista): Contr
             val t=modelo.tipoRec(base,altura )
             vista.showTipoRec(t)
         }else{
-            vista.showErrorRec("Datos no validos")
+            vista.showErrorRec("Es un cuadrado, no podemos calcularlo")
         }
     }
 

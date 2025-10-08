@@ -8,7 +8,7 @@ class RectanguloModelo: ContratoRectangulo.Modelo {
 
     override fun areaRec(base: Float, altura: Float): Float {
 
-        return base * altura
+        return base * altura;
 
     }
 
@@ -27,10 +27,10 @@ class RectanguloModelo: ContratoRectangulo.Modelo {
     }
 
     override fun validaRec(base: Float, altura: Float): Boolean {
-        if (base != altura)
-            return true
-        else
+        if (base == altura)
             return false
+        else
+            return true
 
     }
 
