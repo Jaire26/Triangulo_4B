@@ -1,5 +1,6 @@
 package com.example.triangulo_4b.Vista
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -38,7 +39,9 @@ class MaintrapecioActivity : AppCompatActivity(), ContratoTrapecio.Vista {
         val btnArea=findViewById<Button>(R.id.btnAreaTrap)
         val btnPerimetro=findViewById<Button>(R.id.btnPerimetroTrap)
         val btnTipo=findViewById<Button>(R.id.btnTipoTrap)
+
         txvResTrap=findViewById<TextView>(R.id.txvResTr)
+        val btnRetornar= findViewById<Button>(R.id.btnRetorna)
 
         //inicializamos al presentador
         presentador= TrapecioPresentador(this)
@@ -70,6 +73,12 @@ class MaintrapecioActivity : AppCompatActivity(), ContratoTrapecio.Vista {
             val lado2 = txtl2Trap.text.toString().toFloat()
             val altura = txtaltura.text.toString().toFloat()
             presentador.tipoTrap(txtbaseMayor.text.toString().toFloat(), txtbaseMenor.text.toString().toFloat(), altura, lado1, lado2)
+        }
+
+        btnRetornar.setOnClickListener {
+
+            val intent= Intent(this, MainfigurasActivity::class.java )
+            startActivity(intent)
         }
 
     }

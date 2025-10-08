@@ -1,5 +1,6 @@
 package com.example.triangulo_4b.Vista
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -31,6 +32,7 @@ class RectanguloActivity : AppCompatActivity(), ContratoRectangulo.Vista {
         val btnArea=findViewById<Button>(R.id.btnArea)
         val btnPerimetro=findViewById<Button>(R.id.btnPerimetro)
         val btnTipo=findViewById<Button>(R.id.btnTipo)
+        val btnRetorna= findViewById<Button>(R.id.btnRetorna)
         txvResRec=findViewById<TextView>(R.id.txvResRec)
 
         //inicializamos al presentador
@@ -59,6 +61,10 @@ class RectanguloActivity : AppCompatActivity(), ContratoRectangulo.Vista {
             val base= txtbase.text.toString().toFloat()
             val altura=txtaltura.text.toString().toFloat()
             presentador.tipoRec(base,altura)
+        }
+        btnRetorna.setOnClickListener {
+            val intent= Intent(this, MainfigurasActivity::class.java )
+            startActivity(intent)
         }
     }
     override fun showAreaRec(area: Float) {

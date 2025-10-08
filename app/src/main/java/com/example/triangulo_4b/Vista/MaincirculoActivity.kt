@@ -1,5 +1,6 @@
 package com.example.triangulo_4b.Vista
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -30,7 +31,9 @@ class MaincirculoActivity : AppCompatActivity(), ContratoCirculo.Vista {
         val txtradio = findViewById<EditText>(R.id.editradio)
         val btnArea = findViewById<Button>(R.id.btnArea)
         val btnPerimetro = findViewById<Button>(R.id.btnCircunferencia)
+        val btnRetorna=findViewById<Button>(R.id.btnReturn)
         txvResCir = findViewById<TextView>(R.id.txvResCir)
+
 
         //inicializamos al presentador
         presentador = CirculoPresentador(this)
@@ -48,6 +51,11 @@ class MaincirculoActivity : AppCompatActivity(), ContratoCirculo.Vista {
         btnArea.setOnClickListener {
             val radio = txtradio.text.toString().toFloat()
             presentador.areaCir(radio)
+        }
+
+        btnRetorna.setOnClickListener {
+            val intent= Intent(this, MainfigurasActivity::class.java )
+            startActivity(intent)
         }
 
     }

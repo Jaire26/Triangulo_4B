@@ -31,7 +31,6 @@ class MainfigurasActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
         boton.setOnClickListener {
             when(spinner.selectedItem.toString()){
                 "Triangulo"->{
